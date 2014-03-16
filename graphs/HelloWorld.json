@@ -1,0 +1,65 @@
+{
+    "properties": {
+        "name": "HelloWorld",
+        "id": "HelloWorld",
+        "project": "grouto",
+        "environment": {
+            "type": "noflo-nodejs",
+            "content": ""
+        }
+    },
+    "inports": {},
+    "outports": {},
+    "groups": [],
+    "processes": {
+        "core/Output_7q968": {
+            "component": "core/Output",
+            "metadata": {
+                "label": "core/Output",
+                "x": 504,
+                "y": 324
+            }
+        },
+        "math/Add_3r1p3": {
+            "component": "math/Add",
+            "metadata": {
+                "label": "math/Add",
+                "x": 324,
+                "y": 216
+            }
+        }
+    },
+    "connections": [
+        {
+            "src": {
+                "process": "math/Add_3r1p3",
+                "port": "sum"
+            },
+            "tgt": {
+                "process": "core/Output_7q968",
+                "port": "in"
+            }
+        },
+        {
+            "data": "hello",
+            "tgt": {
+                "process": "core/Output_7q968",
+                "port": "in"
+            }
+        },
+        {
+            "data": 3,
+            "tgt": {
+                "process": "math/Add_3r1p3",
+                "port": "addend"
+            }
+        },
+        {
+            "data": 4,
+            "tgt": {
+                "process": "math/Add_3r1p3",
+                "port": "augend"
+            }
+        }
+    ]
+}
