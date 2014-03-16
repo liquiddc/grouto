@@ -41,13 +41,6 @@
             }
         },
         {
-            "data": "hello",
-            "tgt": {
-                "process": "core/Output_7q968",
-                "port": "in"
-            }
-        },
-        {
             "data": 3,
             "tgt": {
                 "process": "math/Add_3r1p3",
@@ -59,6 +52,13 @@
             "tgt": {
                 "process": "math/Add_3r1p3",
                 "port": "augend"
+            }
+        },
+        {
+            "data": "hello",
+            "tgt": {
+                "process": "core/Output_7q968",
+                "port": "in"
             }
         }
     ]
