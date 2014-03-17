@@ -1,0 +1,51 @@
+{
+    "properties": {
+        "name": "subGraph",
+        "id": "subGraph",
+        "project": "grouto",
+        "environment": {
+            "type": "noflo-nodejs"
+        }
+    },
+    "inports": {},
+    "outports": {},
+    "groups": [],
+    "processes": {
+        "core/Output_xd2l1": {
+            "component": "core/Output",
+            "metadata": {
+                "label": "core/Output",
+                "x": 648,
+                "y": 396
+            }
+        },
+        "redis/Get_h29ms": {
+            "component": "redis/Get",
+            "metadata": {
+                "label": "redis/Get",
+                "x": 396,
+                "y": 360
+            }
+        }
+    },
+    "connections": [
+        {
+            "src": {
+                "process": "redis/Get_h29ms",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "core/Output_xd2l1",
+                "port": "in"
+            },
+            "metadata": {}
+        },
+        {
+            "data": "token:dog",
+            "tgt": {
+                "process": "redis/Get_h29ms",
+                "port": "key"
+            }
+        }
+    ]
+}
