@@ -1,0 +1,84 @@
+{
+    "properties": {
+        "name": "madeOnChrome",
+        "id": "madeOnChrome",
+        "project": "grouto",
+        "environment": {
+            "type": "noflo-nodejs"
+        }
+    },
+    "inports": {},
+    "outports": {},
+    "groups": [],
+    "processes": {
+        "redis/Set_j0o73": {
+            "component": "redis/Set",
+            "metadata": {
+                "label": "redis/Set",
+                "x": 504,
+                "y": 252
+            }
+        },
+        "core/Output_u71yx": {
+            "component": "core/Output",
+            "metadata": {
+                "label": "core/Output",
+                "x": 684,
+                "y": 324
+            }
+        },
+        "redis/Get_rfpgk": {
+            "component": "redis/Get",
+            "metadata": {
+                "label": "redis/Get",
+                "x": 504,
+                "y": 432
+            }
+        }
+    },
+    "connections": [
+        {
+            "src": {
+                "process": "redis/Set_j0o73",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "core/Output_u71yx",
+                "port": "in"
+            },
+            "metadata": {}
+        },
+        {
+            "src": {
+                "process": "redis/Get_rfpgk",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "core/Output_u71yx",
+                "port": "in"
+            },
+            "metadata": {}
+        },
+        {
+            "data": "token:dog",
+            "tgt": {
+                "process": "redis/Set_j0o73",
+                "port": "key"
+            }
+        },
+        {
+            "data": "red",
+            "tgt": {
+                "process": "redis/Set_j0o73",
+                "port": "value"
+            }
+        },
+        {
+            "data": "token:dog",
+            "tgt": {
+                "process": "redis/Get_rfpgk",
+                "port": "key"
+            }
+        }
+    ]
+}
