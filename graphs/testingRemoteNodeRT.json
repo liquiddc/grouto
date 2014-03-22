@@ -1,0 +1,15 @@
+{
+    "properties": {
+        "name": "testingRemoteNodeRT",
+        "id": "testingRemoteNodeRT",
+        "project": "grouto",
+        "environment": {
+            "type": "noflo-nodejs"
+        }
+    },
+    "inports": {},
+    "outports": {},
+    "groups": [],
+    "processes": {},
+    "connections": []
+}
